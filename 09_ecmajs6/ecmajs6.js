@@ -1,3 +1,7 @@
+import {cargarDatosGlobales,GestorClientes,URL_SERVICIOS} from './ecmajs6modulos.js'
+// Asi se importa un fichero js para poder usarlo en este fichero js, en las llaves se especifica lo que quieres importar
+
+
 // Declaracion de variables
 
 // En vez de emplear 'var' se emplea 'let' y 'const'
@@ -112,6 +116,31 @@ function altaCliente(nombre,apellidos, ...propiedades){
 
 altaCliente ("german", "gonzalez", "propiedad1", 123456789, 10.10);
 
+// SobreObjetos
+let cliente = {
+    nombre:"Luis",
+    apellidos: "Gonzalo"
+};
+
+let correo = {
+    servidor : "imap.acme.com",
+    usuario:"jg"
+}
+
+// Incorpora todas las propiedades del cliente 
+let CopiaCliente = {...cliente};
+
+// Incorporamos las propiedades del cliente y dos nuevas correspondiente al correo
+let clienteConCorreo = {...cliente,...correo};
+
+let clienteConPropiedades ={
+    cliente: {...cliente},
+    correo : {...correo}
+};
+
+console.log(CopiaCliente);
+console.log(clienteConCorreo);
+console.log(clienteConPropiedades);
 
 /////////////////////////////////////////////////////////////////////
 // Desestructurar asignaciones
@@ -213,3 +242,53 @@ function prepararEmbalaje(
 // Llamo a la funcion por el objeto producto
 prepararEmbalaje(producto);
 
+
+//////////////////////////////////////////////////////////////////
+// Arrow functions
+
+let sumar = function (a,b){
+    return a+b;
+}
+
+// De esta forma se ahorra codigo, es como crear una funcion
+let restar = (a,b)=> a - b;
+
+
+console.log("Suma: %s, Resta: %s",sumar(1,1),restar(1,1));
+
+
+let enviarMensaje = (destinatario, mensaje, auditar = false) =>{
+    // Las funciones flecha no dispone de arguments
+    // console.log(arguments.join(","));
+    console.log(destinatario, mensaje,auditar);
+    return true;
+}
+enviarMensaje("german","Mensaje1");
+
+////////////////////////////////////////////////////////////////////////
+// Cadenas plantilla, template strings
+let cadenaSinPlantilla = 
+    "Alumno " + alumno.nombre + "\n"+
+    "Apellidos " + alumno.apellidos + "\n";
+
+// Comilla simple invertida!!!
+let cadenaPlantilla = `Alumno ${alumno.nombre} ${alumno.apellidos}`;
+
+let cadenaPlantilla2 = 
+`
+Alumno ${alumno.nombre}
+Apellidos ${alumno.apellidos}
+`;
+
+console.log(cadenaSinPlantilla);
+console.log(cadenaPlantilla);   
+console.log(cadenaPlantilla2);   
+
+
+/// PROBAMOS IMPORTS
+
+cargarDatosGlobales();
+
+let gestor = new GestorClientes();
+
+console.log(URL_SERVICIOS);
