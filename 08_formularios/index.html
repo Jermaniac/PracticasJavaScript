@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="estilos.css">
+    <script src="../bootstrap/jquery-3.5.1.slim.min.js"></script>
+    <script src="../bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="formularios.js" defer></script>
+</head>
+<body>
+    <div class="container">
+
+        <form name="cliente" submit = "">
+            <div>
+                <div class="row">
+                    <div class="form-group col-2">
+                        <label for="nif">Nif</label>
+                        <input type="text" class="form-control" id="nif" name="nif">
+                        <span></span>
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre">
+                        <span></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="apellidos">Apellidos</label>
+                        <input type="text" class="form-control" id="apellidos" name="apellidos">
+                        <span></span>
+                    </div>
+                </div>
+
+ 
+
+                <div class="row">
+                    <div class="form-group col-2">
+                        <label for="usuario">Usuario</label>
+                        <input type="text" class="form-control" id="usuario" name="usuario">
+                        <span></span>
+                    </div>
+                    <div class="form-group col-2">
+                        <label for="clave">Clave</label>
+                        <input type="password" class="form-control" id="clave" name="clave">
+                        <span></span>
+                    </div>
+                </div>
+
+ 
+
+                <div class="row m-3">
+                    <div class="form-check col-3">
+                        <input type="checkbox" class="form-check-input" id="noticias" name="noticias">
+                        <label for="noticias" class="form-check-label">Recibir boletín de noticias</label>
+                        <span></span>
+                    </div>
+                    <div class="form-group col-3">
+                        <input type="checkbox" class="form-check-input" id="condiciones" name="condiciones" checked>
+                        <label for="condiciones" class="form-check-label">Acepto condiciones</label>
+                        <span></span>
+                    </div>
+                </div>
+
+ 
+
+                <div class="row form-check m-3">
+                    <div class="m-2">Medio de pago</div>
+
+ 
+
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="transferencia" name="medioDePago" value="transferencia">
+                        <label for="transferencia" class="form-check-label">Transferencia</label>
+                        <span></span>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="tarjeta" name="medioDePago" value="tarjeta">
+                        <label for="tarjeta" class="form-check-label">Tarjeta</label>
+                        <span></span>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="paypal" name="medioDePago" value="paypal">
+                        <label for="paypal" class="form-check-label">PayPal</label>
+                        <span></span>
+                    </div>
+                </div>
+
+ 
+
+                <div class="row">
+                    <div class="form-group col-2">
+                        <label for="localidad">Localidad</label>
+                        <select name="localidad" id="localidad" class="form-control">
+                        </select>
+
+ 
+
+                        <span></span>
+                    </div>
+                    <div class="form-group col-2">
+                        <label for="provincia">Provincia</label>
+                        <select name="provincia" id="provincia" class="form-control" size="6">
+                        </select>
+                        
+                        <span></span>
+                    </div>
+                </div>
+
+ 
+
+                <div class="row">
+                    <div class="form-group col-2">
+                        <label for="nivel">Nivel</label>
+                        <input type="range" class="form-control-range" id="nivel" name="nivel" min="0" max="5">
+                        <span></span>
+                    </div>
+                </div>
+
+ 
+
+                <div class="row">
+                    <div class="form-group col-6">
+                    <label for="nivel">Comentarios</label>
+                       <textarea id="comentarios" name="comentarios" class="form-control" cols="60" rows="4"></textarea>
+                       <span></span>
+                    </div>
+                </div>
+
+ 
+
+                <div class="row justify-content-center p-2">
+                        <div class="col-2">
+                            <div>
+                                <input type="submit" class="btn btn-primary" id="btnsubmit" value="Enviar con submit">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div>
+                                <input type="button" class="btn btn-primary" id="btnnosubmit" value="Enviar sin submit">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div>
+                                <input type="reset" class="btn btn-primary" value="Restaurar valores">
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </form>
+
+        <div>
+            <table class="table">
+
+                <thead>
+                    <tr>
+                        <th>NIF</th>
+                        <th>Nombre</th>
+                        <th>Usuario</th>
+                        <th>Clave</th>
+                        <th>Medio de Pago</th>
+                        <th>Nivel</th>
+                    </tr>
+                </thead>
+
+                <!--Esto puede estar vacio porque metemos html por javascript-->
+                <tbody id="tablaclientes">
+                </tbody>
+
+            </table>
+        </div>
+
+ 
+
+    </div>
+
+ 
+
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="../bootstrap/jquery-3.5.1.slim.min.js"></script>
+    <script src="../bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="navegador.js" defer> </script>
+</head>
+<body>
+    <div class="container justify-content-end">
+
+        <div class="row">
+            <!--12 columnas virtuales-->
+            <div class="col-md-6 col-6"></div>
+            <div class="col-md-4 col-6"></div>
+            <div class="col-md-1 col"></div>
+            <div class="col-md-1 col"></div>
+        </div>
+        <!--col -> extra pequeño -> < 576px
+            col-sm -> pequeño -> >= 576px
+            col-md -> mediano -> >= 768px
+            col-lg -> grande -> >= 992px
+            col-xl -> extra grande -> >= 1200px
+        -->
+        <!--Podemos poner varios col- para controlar las pantallas mas pequeñas en todo momento-->
+        <div class="row">
+            <div class="col-sm-4 col-3"></div>
+            <div class="col-sm-4 col-3"></div>
+            <div class="col-sm-2 col-2"></div>
+            <div class="col-sm-2 col-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 col-12"></div>
+            <div class="col-lg-3 col-sm-6 col-12"></div>
+            <div class="col-lg-3 col-sm-6 col-12"></div>
+            <div class="col-lg-3 col-sm-6 col-12"></div>
+        </div>
+        <div class="row row-cols-2">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <!--Hacer que este div este en la parte de abajo en vertical-->
+        <div id="vertical" class="row align-items-end">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+
+        <!--Hacer que este div empiece esde la parte de la derecha en horizontal-->
+        <div id="horizontal" class="row justify-content-between">
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+        </div>
+
+        <div id="datos" class="row">
+        </div>
+
+        <div id="reloj" class="row justify-content-center"></div>
+
+        <div id="botonera" class="row justify-content-center">
+            <div class="col-2">
+                <input class="btn btn-primary" type="button" id="boton1" value="Abrir ventana 06_matrices">
+            </div>
+            <div class="col-4">
+                <input class="btn btn-primary" type="button" id="boton2" value="Abrir ventana2 fullscreen">
+            </div>
+            <div class="col-2">
+                <input class="btn btn-primary" type="button" id="boton3" value="Mostrar reloj">
+            </div>
+            <div class="col-2">
+                <input class="btn btn-primary" type="button" id="boton4" value="Eliminar reloj">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

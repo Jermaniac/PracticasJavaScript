@@ -1,0 +1,38 @@
+div.container > div {
+
+    /* border: 2px black solid; */
+    width: 80%;
+    /*height: 25vh;*/
+    margin: 1em auto 1em auto;
+
+}
+
+div#vertical {
+    height: 80px;
+}
+
+div#vertical > div {
+    height: 50%; /*con esto al 100% ocupa todo su espacio del padre*/
+}
+
+/* colocamos estilos en los div dentro de los div*/
+/* en html para que se hagan rejillas(no salga en horizontal) se utiliza la class=row*/
+div.container > div > div{
+
+    border: 1px black solid;
+    /*width: 20%;*/
+    height: 80px; /*con esto al 100% ocupa todo su espacio*/
+    /*margin: 1em;*/
+    background-color: orange;
+
+}
+
+div#botonera > div{
+    border: none;
+    height: auto;
+    background-color: white;
+}
+
+body > div.container {
+    /* border: 1px red solid; */
+}
